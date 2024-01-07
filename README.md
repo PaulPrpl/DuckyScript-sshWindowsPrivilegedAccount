@@ -8,6 +8,6 @@ Powershell is required on the targeted machine. This script only works on Window
 
 Please note that the group 'Administrators' can vary depending on the machine's locale. The opened terminal won't close after the test.
 
-You'll need a BadUSB device (like Rubber Ducky, CactuS WHID HID, FlipperZero), and an unlocked session with admin privileges must be present on the targeted machine.
+You'll need a BadUSB device (like Rubber Ducky, Cactus WHID, FlipperZero), and an unlocked session with admin privileges must be present on the targeted machine.
 
 **Use this script only for testing or demonstration purposes. You are solely responsible for your actions.**
