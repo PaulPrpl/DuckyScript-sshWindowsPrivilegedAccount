@@ -6,7 +6,7 @@ You can edit the password and username directly in the script; the defaults are 
 
 Powershell is required on the targeted machine. This script only works on Windows and has been tested on Windows 10.
 
-Please note that the group 'Administrators' can vary depending on the machine's locale. The opened terminal won't close after the test.
+Please note that the group 'Administrators' can vary depending on the machine's locale. The opened terminals won't close after the test.
 
 You'll need a BadUSB device (like Rubber Ducky, Cactus WHID, FlipperZero), and an unlocked session with admin privileges must be present on the targeted machine.
 
